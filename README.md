@@ -16,4 +16,4 @@ E. "Some stats hw" is exactly what it sounds like.
 
 F. "Trying to pick out a laptop" has some data visualizations. 
 
-G. "Stats Review for Job Interview" uses Python 
+G. "Stats Review for Job Interview" uses IPython Notebook
