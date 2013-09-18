@@ -17,3 +17,5 @@ E. "Some stats hw" is exactly what it sounds like.
 F. "Trying to pick out a laptop" has some data visualizations. 
 
 G. "Stats Review for Job Interview" uses IPython Notebook
+
+H. "Mass Nonprofit Network Volunteer Data Science, Project 4 Group" does some data work and crosstabs 
