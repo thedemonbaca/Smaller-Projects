@@ -14,7 +14,7 @@
 
 # Libaries
 library(sqldf)
-require(stats)
+library(vcd)
 
 # Load data
 data1 <- read.csv("/home/ty/code/Smaller-Projects/mnn/irsbmf_201307_ma_v14_JM_DEV.csv")
@@ -66,7 +66,38 @@ Southeast <-  sqldf("SELECT * FROM data2 WHERE Region = 'Southeast'
 ORDER BY Sector")
 summary(Southeast$Region)
 
-# # # # # # # # # # # # #
-# Do crosstabs to see   #
-# # # # # # # # # # # # #
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+# Do crosstabs to see relationships b/t budget & sector  #
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 
+# #  #  #  #  #  #  #  #  #  #  # #
+# 2-Way Frequency Table by region #
+# #  #  #  #  #  #  #  #  #  #  # # 
+
+# Having trouble with data types here !!
+
+# Berkshire
+mytable <- cbind(Berkshire$Sector, Berkshire$NCCS_2011_Budget)
+xtabs(V2~V1, data =mytable)# A frequencies (summed over B)
+
+# Boston.Cape.Island
+mytable <- cbind(Boston.Cape.Island$Sector,
+                 Boston.Cape.Island$NCCS_2011_Budget)
+margin.table(mytable, 1)# A frequencies (summed over B)
+
+# Central
+mytable <- cbind(Central$Sector, Central$NCCS_2011_Budget)
+margin.table(mytable, 1)# A frequencies (summed over B)
+
+# Metrowest
+mytable <- cbind(Metrowest$Sector, Metrowest$NCCS_2011_Budget)
+margin.table(mytable, 1)# A frequencies (summed over B)
+
+# Northeast.Pioneer.Valley
+mytable <- cbind(Northeast.Pioneer.Valley$Sector,
+                 Northeast.Pioneer.Valley$NCCS_2011_Budget)
+margin.table(mytable, 1)# A frequencies (summed over B)
+
+# Southeast
+mytable <- cbind(Southeast$Sector, Southeast$NCCS_2011_Budget)
+margin.table(mytable, 1)# A frequencies (summed over B)
