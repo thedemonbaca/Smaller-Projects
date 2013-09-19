@@ -14,9 +14,15 @@
 
 # Libaries
 library(sqldf)
+require(stats)
 
 # Load data
-data1 <- read.csv("/home/ty/workspace/mnn/irsbmf_201307_ma_v14_JM_TEST.csv")
+data1 <- read.csv("/home/ty/code/Smaller-Projects/mnn/irsbmf_201307_ma_v14_JM_DEV.csv")
+
+# Here's the columns that Jeff suggested as most interesting:
+# Region
+# Sector
+# NCCS_2011_Budget
 
 # Filter out organizations < 50,000 budget
 data2 <- sqldf("SELECT * FROM data1 WHERE NCCS_2011_Budget > 50000")
@@ -25,17 +31,42 @@ data2 <- sqldf("SELECT * FROM data1 WHERE NCCS_2011_Budget > 50000")
 summary(data2$NCCS_2011_Budget)
 plot(data2$NCCS_2011_Budget)
 
-# Try to filter on the "Designation.501c" column
-summary(data2$Designation.501c)
+summary(data2$Region)
+summary(data2$Sector)
+summary(data2$MNN_Name)
 
-# The "Designation.501c" column returns a null value
-# so let's try some other stuff and maybe go with that
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+# Create separate tables for each region. Order by sector within  # 
+# region.                                                         #
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 
-# Get the names of the columns
-names(data2)
+Berkshire <- sqldf("SELECT * FROM data2 WHERE Region = 'Berkshire'
+ORDER BY Sector")
+summary(Berkshire$Region)
 
-# Looks like "Designation_501c" might be what we wanted.
-# "MNN_Name" also looks interesting.
+# No entries found for Boston Cape & Islands
+Boston.Cape.Island <- sqldf("SELECT * FROM data2 WHERE Region =
+'Boston Cape & Islands' ORDER BY Sector")
+summary(Boston.Cape.Island$Region)
 
-summary(data2$Designation_501c)
-data2$MNN_Name[0:300]
+Central <- sqldf("SELECT * FROM data2 WHERE Region = 'Central' ORDER
+BY Sector")
+summary(Central$Region)
+
+Metrowest <- sqldf("SELECT * FROM data2 WHERE Region = 'Metrowest' ORDER
+BY Sector")
+summary(Metrowest$Region)
+
+# No entries found for Northeast Pioneer Valley
+Northeast.Pioneer.Valley <- sqldf("SELECT * FROM data2 WHERE Region =
+'Northeast Pioneer Valley' ORDER BY Sector")
+summary(Northeast.Pioneer.Valley$Region)
+
+Southeast <-  sqldf("SELECT * FROM data2 WHERE Region = 'Southeast'
+ORDER BY Sector")
+summary(Southeast$Region)
+
+# # # # # # # # # # # # #
+# Do crosstabs to see   #
+# # # # # # # # # # # # #
+
