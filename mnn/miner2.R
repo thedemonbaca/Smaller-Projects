@@ -54,5 +54,15 @@ ORDER BY Sector")
 #                                                                 #
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 
-#
+# Boston
 write.csv(MyData, file = "MyData.csv")
+# Cape & Islands
+write.csv(MyData, file = "MyData.csv")
+# Central
+write.csv(MyData, file = "MyData.csv")
+# Metrowest
+write.csv(MyData, file = "MyData.csv")
+# Northeast Pioneer Valley
+write.csv(Northeast.Pioneer.Valley, file = "NortheastPioneerValley.csv")
+# Southeast
+write.csv(Southeast, file = "Southeast.csv")
