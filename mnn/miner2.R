@@ -82,9 +82,9 @@ Boston.A <-  sqldf("SELECT MNN_Name, COUNT(MNN_Name) FROM data2 WHERE
 Region = 'Boston' AND MNN_Name != 'NA' GROUP BY MNN_Name")
 Boston.A
 # Cape & Islands
-Central.A <-  sqldf("SELECT MNN_Name, COUNT(MNN_Name) FROM data2 WHERE
-Region = 'Central' AND MNN_Name != 'NA' GROUP BY MNN_Name") # Check here
-Central.A
+CapeIslands.A <-  sqldf("SELECT MNN_Name, COUNT(MNN_Name) FROM data2 WHERE
+Region = 'Cape & Islands' AND MNN_Name != 'NA' GROUP BY MNN_Name")
+CapeIslands.A
 # Central
 Central.A <-  sqldf("SELECT MNN_Name, COUNT(MNN_Name) FROM data2 WHERE
 Region = 'Central' AND MNN_Name != 'NA' GROUP BY MNN_Name")
@@ -106,3 +106,9 @@ Berkshire.A <-  sqldf("SELECT MNN_Name, COUNT(MNN_Name) FROM data2 WHERE
 Region = 'Berkshire' AND MNN_Name != 'NA' GROUP BY MNN_Name")
 Berkshire.A
 
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+# Cross tabulations                                               # 
+#                                                                 #
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+
+# These would go here, when I get more time
