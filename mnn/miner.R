@@ -45,9 +45,14 @@ ORDER BY Sector")
 summary(Berkshire$Region)
 
 # No entries found for Boston Cape & Islands
-Boston.Cape.Island <- sqldf("SELECT * FROM data2 WHERE Region =
-'Boston Cape & Islands' ORDER BY Sector")
-summary(Boston.Cape.Island$Region)
+Boston <- sqldf("SELECT * FROM data2 WHERE Region =
+'Boston' ORDER BY Sector")
+summary(Boston$Region)
+
+# Cape & Islands
+Cape.Island <- sqldf("SELECT * FROM data2 WHERE Region =
+'Cape & Islands' ORDER BY Sector")
+summary(Cape.Island$Region)
 
 Central <- sqldf("SELECT * FROM data2 WHERE Region = 'Central' ORDER
 BY Sector")
