@@ -17,6 +17,7 @@ library(sqldf)
 library(ggplot2)
 library(reshape2)
 library(plyr)
+
 # Load data
 setwd("/home/ty/code/Smaller-Projects/mnn/")
 data1 <- read.csv("irsbmf_201307_ma_v15_JM.csv")
@@ -120,4 +121,20 @@ Berkshire.A
 #                                                                 #
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 
-# These would go here, when I get more time
+# Description:
+#  We're going to use color so we can compare R3 instead of R2 
+# x: location
+# y: count
+# z: budget
+
+# x: location
+#  Let's use Region
+#
+# y: count
+#  Let's use a count of Region
+# z: budget
+#  Let's use NCCS_2011_Budget.Range
+
+ggplot(data2, aes(data2$NCCS_2011_Budget.Range, fill = data2$Region )) + geom_bar()+
+    labs(title="Figure1: Roughly the Same Laptop Hardware")
+
