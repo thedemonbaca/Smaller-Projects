@@ -14,7 +14,9 @@
 
 # Libaries
 library(sqldf)
-
+library(ggplot2)
+library(reshape2)
+library(plyr)
 # Load data
 setwd("/home/ty/code/Smaller-Projects/mnn/")
 data1 <- read.csv("irsbmf_201307_ma_v15_JM.csv")
@@ -42,9 +44,12 @@ BY Sector")
 # Metrowest
 Metrowest <- sqldf("SELECT * FROM data2 WHERE Region = 'Metrowest' ORDER
 BY Sector")
-# Northeast Pioneer Valley
-Northeast.Pioneer.Valley <- sqldf("SELECT * FROM data2 WHERE Region =
-'Northeast Pioneer Valley' ORDER BY Sector")
+# Northeast
+Northeast <- sqldf("SELECT * FROM data2 WHERE Region =
+'Northeast' ORDER BY Sector")
+# Pioneer Valley
+Pioneer.Valley <- sqldf("SELECT * FROM data2 WHERE Region =
+'Pioneer Valley' ORDER BY Sector")
 # Southeast
 Southeast <-  sqldf("SELECT * FROM data2 WHERE Region = 'Southeast'
 ORDER BY Sector")
@@ -57,6 +62,8 @@ ORDER BY Sector")
 #                                                                 #
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 
+setwd("/home/ty/code/Smaller-Projects/mnn/csv_data/")
+
 # Boston
 write.csv(Boston, file = "Boston.csv")
 # Cape & Islands
@@ -65,8 +72,10 @@ write.csv(Cape.Island, file = "CapeIsland.csv")
 write.csv(Central, file = "Central.csv")
 # Metrowest
 write.csv(Metrowest, file = "Metrowest.csv")
-# Northeast Pioneer Valley
-write.csv(Northeast.Pioneer.Valley, file = "NortheastPioneerValley.csv")
+# Northeast 
+write.csv(Northeast, file = "Northeast.csv")
+# Pioneer Valley
+write.csv(Pioneer.Valley, file = "PioneerValley.csv")
 # Southeast
 write.csv(Southeast, file = "Southeast.csv")
 # Berkshire
@@ -107,7 +116,7 @@ Region = 'Berkshire' AND MNN_Name != 'NA' GROUP BY MNN_Name")
 Berkshire.A
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
-# Cross tabulations                                               # 
+# Visualization                                                   # 
 #                                                                 #
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 
