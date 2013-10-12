@@ -1,5 +1,8 @@
 # Reference: http://www.statmethods.net/stats/frequencies.html
 
+# Library
+library(ggplot2)
+
 # Load functions
 setwd("/home/ty/code/Smaller-Projects/mnn/")
 source("irs.R")
@@ -26,12 +29,25 @@ prop.table(mytable, 2) # column percentages
 
 # Figure 1: Comparison of Region, Budget Range, and MNN Status
 # 3-Way Frequency Table
-mytable2 <- table(mnn.dat$Region, bl, mnn.dat$MNN.Status)
-ftable(mytable2)
+mytable2 <- table(mnn.dat$Region, bl, mnn.dat$MNN.Status,
+                  mnn.dat$Sector)
+yes <- ftable(mytable2)
 
 # Figure 2: Sum of table entries for a given index
 margin.table(mytable2, 1) # mnn.dat$Region frequencies (summed over bl)
 margin.table(mytable2, 2) # bl frequencies (summed over mnn.dat$Region)
 margin.table(mytable2, 3) # mnn.dat$MNN.Status (summed over mnn.dat$Region)
 
-# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
+# Revised Tables                                                   #
+# # # #  # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
+
+# IncomeByRegion
+
+# IncomeBySector
+
+# SectorByRegion
+
+
