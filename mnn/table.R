@@ -29,8 +29,7 @@ prop.table(mytable, 2) # column percentages
 
 # Figure 1: Comparison of Region, Budget Range, and MNN Status
 # 3-Way Frequency Table
-mytable2 <- table(mnn.dat$Region, bl, mnn.dat$MNN.Status,
-                  mnn.dat$Sector)
+mytable2 <- table(mnn.dat$Region, bl, mnn.dat$MNN.Status)
 yes <- ftable(mytable2)
 
 # Figure 2: Sum of table entries for a given index
@@ -45,9 +44,13 @@ margin.table(mytable2, 3) # mnn.dat$MNN.Status (summed over mnn.dat$Region)
 # # # #  # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
 
 # IncomeByRegion
-
+check <- table(bl,mnn.dat$Region,mnn.dat$MNN.Status)
+IncomeByRegion <- ftable(check)
 # IncomeBySector
-
+check <- table(bl, mnn.dat$Sector, mnn.dat$MNN.Status)
+IncomeBySector <- ftable(check)
 # SectorByRegion
+check <- table(mnn.dat$Sector, mnn.dat$Region, mnn.dat$MNN.Status)
+SectorByRegion <- ftable(check)
 
 
