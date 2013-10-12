@@ -39,9 +39,9 @@ margin.table(mytable2, 3) # mnn.dat$MNN.Status (summed over mnn.dat$Region)
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 
-# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #  
 # Revised Tables                                                   #
-# # # #  # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
+# # # #  # # # # # # # # # # # # # # # # # # # # # # # # # # # # #  
 
 # IncomeByRegion
 check <- table(bl,mnn.dat$Region,mnn.dat$MNN.Status)
@@ -52,5 +52,8 @@ IncomeBySector <- ftable(check)
 # SectorByRegion
 check <- table(mnn.dat$Sector, mnn.dat$Region, mnn.dat$MNN.Status)
 SectorByRegion <- ftable(check)
+# Summary Table
+check <- table(mnn.dat$Region, mnn.dat$MNN.Status)
+SummaryTable <- ftable(check)
 
 
