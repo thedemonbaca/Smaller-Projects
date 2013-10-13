@@ -56,4 +56,10 @@ SectorByRegion <- ftable(check)
 check <- table(mnn.dat$Region, mnn.dat$MNN.Status)
 SummaryTable <- ftable(check)
 
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #  
+# Visualizations                                                   #
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+
+# Let's try the heatmap and/or the bar chart
+
 
