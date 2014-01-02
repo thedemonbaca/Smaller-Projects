@@ -1,7 +1,7 @@
 Smaller-Projects
 ================
 
-These are projects done in R over the course of a day or a week. 
+These are projects done in R, Python, or Latex over the course of a day or a week. 
 
 A. "Craig Crawler" extracts the link for a listing on craigslist and puts it in a table.
 
@@ -19,3 +19,5 @@ F. "Trying to pick out a laptop" has some data visualizations.
 G. "Stats Review for Job Interview" uses IPython Notebook
 
 H. "Mass Nonprofit Network Volunteer Data Science, Project 4 Group" does some data work and crosstabs 
+
+I. "resume" is my resume in Latex
