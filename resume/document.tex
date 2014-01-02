@@ -1,0 +1,107 @@
+%% start of file `template.tex'.
+%% Copyright 2006-2013 Xavier Danaux (xdanaux@gmail.com).
+%
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License version 1.3c,
+% available at http://www.latex-project.org/lppl/.
+
+
+\documentclass[11pt,a4paper,sans]{moderncv}        % possible options include font size ('10pt', '11pt' and '12pt'), paper size ('a4paper', 'letterpaper', 'a5paper', 'legalpaper', 'executivepaper' and 'landscape') and font family ('sans' and 'roman')
+
+% moderncv themes
+\moderncvstyle{casual}                             % style options are 'casual' (default), 'classic', 'oldstyle' and 'banking'
+\moderncvcolor{blue}                               % color options 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey' and 'black'
+%\renewcommand{\familydefault}{\sfdefault}         % to set the default font; use '\sfdefault' for the default sans serif font, '\rmdefault' for the default roman one, or any tex font name
+%\nopagenumbers{}                                  % uncomment to suppress automatic page numbering for CVs longer than one page
+
+% character encoding
+%\usepackage[utf8]{inputenc}                       % if you are not using xelatex ou lualatex, replace by the encoding you are using
+%\usepackage{CJKutf8}                              % if you need to use CJK to typeset your resume in Chinese, Japanese or Korean
+
+% adjust the page margins
+\usepackage[scale=.77]{geometry}
+%\setlength{\hintscolumnwidth}{3cm}                % if you want to change the width of the column with the dates
+%\setlength{\makecvtitlenamewidth}{10cm}           % for the 'classic' style, if you want to force the width allocated to your name and avoid line breaks. be careful though, the length is normally calculated to avoid any overlap with your personal info; use this at your own typographical risks...
+
+% personal data
+\name{Tyler}{Brown}
+\title{Analyst}                               % optional, remove / comment the
+% line if not wanted
+\address{81 Assabet Ave}{Concord, MA 01742}
+% the line if not wanted; the "postcode city" and "country" arguments can be omitted or provided empty
+\phone[cell]{+1~(603)~321~3097}                   % optional, remove / comment
+\email{tylers.pile@gmail.com}                               % optional, remove /
+% comment the line if not wanted
+\social[github]{Bonza-Times}                              % optional, remove /
+% comment
+
+% to show numerical labels in the bibliography (default is to show no labels); only useful if you make citations in your resume
+%\makeatletter
+%\renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}
+%\makeatother
+%\renewcommand*{\bibliographyitemlabel}{[\arabic{enumiv}]}% CONSIDER REPLACING THE ABOVE BY THIS
+
+% bibliography with mutiple entries
+%\usepackage{multibib}
+%\newcites{book,misc}{{Books},{Others}}
+%----------------------------------------------------------------------------------
+%            content
+%----------------------------------------------------------------------------------
+\begin{document}
+%\begin{CJK*}{UTF8}{gbsn}                          % to typeset your resume in Chinese using CJK
+%-----       resume       ---------------------------------------------------------
+\makecvtitle
+\section{Summary}
+{A skilled analyst, experienced in solving data problems and statistical
+modeling, who synthesizes information to tell a story that contributes value.}
+\section{Experience}
+\cventry{2013--Present}{Analyst}{Evolution Enterprises,
+Inc.}{Natick,MA}{}{Assist the U.S. Army with contract procurement\newline{}%
+Detailed achievements:%
+\begin{itemize}%
+\item SQL database skills
+\begin{itemize}
+\item Partner with government personnel to reconcile \$75 billion in contract allocations 
+with over \$1.5 billion in contract modifications using SQL
+database skills in Microsoft Access; among other data projects.
+\end{itemize}
+\item Prepared and administered tasks for higher U.S. Army headquarters, and
+Business Management Team
+\item Partner with government team members to produce organizational analytics.
+\end{itemize}}
+\cventry{2010--2012}{Research \& Teaching
+Assistant}{Binghamton University-SUNY}{Binghamton, NY}{}{Assist Professors with
+research and teaching\newline{} Detailed achievements:
+\begin{itemize}
+  \item Wrote a computer program when hand-coding had previously limited the
+  scope of research. The program parsed all individual 	campaign contributions
+  from 1990-2010; recorded by the Federal Election Commission. Final dataset
+  consisted of only employees for 20 retail companies. 
+  \item Students improved their learning of abstract, game theoretic, concepts
+  when I demonstrated how those concepts could be applied to material they found
+  relatable. 
+\end{itemize}}
+\section{Education}
+\cventry{2010--2012}{MA-Political
+Science}{Binghamton University-SUNY}{Binghamton,
+NY}{\textit{}}{Ranked in the top 20 by the 2010 NRC Study, and 19th in the world
+by the Hix study}
+% arguments 3 to 6 can be left empty
+\cventry{2006--2010}{BA-Political
+Science}{Franklin Pierce University}{Rindge, NH}{\textit{}}{Pi Sigma Alpha
+Member- The National Political Science Honor Society}
+
+\section{Competitions}
+\cventry{7/20/13}{Hopper, Storm, \& Finangle Hackathon}{Hack/Reduce}{Cambridge,
+MA}{}{Tied for 4th place/17 teams, used Python}
+\cventry{9/13/13}{Pakathon}{Hack/Reduce}{Cambridge, MA}{}{1 of 3 Boston
+Finalists/16 Boston teams, used Python}
+\cventry{12/13/13}{MassDOT Visualizing
+Transportation}{Hack/Reduce}{Cambridge,MA}{}{Won Crowd Favorite/12 teams, used
+SQL, Python, R statistical software}
+
+%\clearpage\end{CJK*}                              % if you are typesetting your resume in Chinese using CJK; the \clearpage is required for fancyhdr to work correctly with CJK, though it kills the page numbering by making \lastpage undefined
+\end{document}
+
+
+%% end of file `template.tex'.
