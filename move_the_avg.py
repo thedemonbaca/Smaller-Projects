@@ -89,7 +89,21 @@ def gen_report(the_stars):
 
         elif calculate_avg(test_tally) <= 1.05 and\
            calculate_avg(test_tally) >= 0.95:
-            results_dict["1-star avg"] = len(test_tally) - running_total
+            if len(results_dict) == 3:
+                pass
+            else:
+                results_dict["1-star avg"] = len(test_tally) - running_total
+
+    # whoops didn't decide what would happen once the avg started dropping
+    if "3-star avg" not in results_dict:
+        results_dict["3-star avg"] = 0
+    elif "2-star avg" not in results_dict:
+        results_dict["2-star avg"] = 0
+    elif "1-star avg" not in results_dict:
+        results_dict["1-star avg"] = 0
+    else:
+        pass
+            
     # ok we have the results
     return results_dict
 
@@ -117,7 +131,7 @@ def main(the_stars):
     print results["2-star avg"], " Additional 1-star votes needed"\
         +" for a 2-star avg"
     print results["1-star avg"], " Additional 1-star votes needed"\
-        +"for a 1-star avg"
+        +" for a 1-star avg"
 
     print "\n#############################################################"
     print "# Remember to treat others how you would like to be treated #"
