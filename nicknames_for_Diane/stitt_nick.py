@@ -1,6 +1,6 @@
 """
 This is a program to generate nicknames for Diane Stitt. We'll be using
-here last name; Stitt.
+her last name; Stitt.
 
 Rules:
     1) Stitt has to be at the beginning of the word
@@ -21,7 +21,7 @@ from nltk.corpus import words
 import re
 
 
-def findPair(word):
+def find_pair(word):
     """ Find any word that includes two t's """
 
     if re.search("(?<=tt)\w+", word):
@@ -30,7 +30,7 @@ def findPair(word):
         return False
 
 
-def addStitt(pair):
+def add_stitt(pair):
     """ Add Stitt to our newly transformed word called 'vowcon'"""
 
     return "Stitt" + pair
@@ -51,8 +51,8 @@ def main():
     stitt_dict = {}
     for word in words.words('en'):
         # find a word that includes two t's 
-        if findPair(word):
-            data_structure(addStitt(findPair(word)), # Add Stitt to the word
+        if find_pair(word):
+            data_structure(add_stitt(find_pair(word)), # Add Stitt to word
                            word, # include original word for comparison
                            stitt_dict) # use a dict to group nickname dups
             
