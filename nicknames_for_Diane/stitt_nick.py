@@ -22,44 +22,40 @@ import re
 
 
 def findPair(word):
-    """ Find any word that includes a vowel followed directly by a
-    consonant"""
+    """ Find any word that includes two t's """
 
-    # create a regex that follows this rule
-    pair = re.compile("[aeiou].(tt)")
-
-    if pair.search(word):
-        return pair.search(word).group()
+    if re.search("(?<=tt)\w+", word):
+        return re.search("(?<=tt)\w+", word).group()
     else:
         return False
 
 
-def removeVowCon(word):
-    """ Remove the consonent which directly follows the first vowel in
-    a word """
-
-    # create a regex that follows this rule
-    vowcon = re.search('(?<=[aeiou]).[^aeiouyw].*', word)
-
-    if vowcon:
-        return vowcon.group()
-    else:
-        return False
-
-
-def addStitt(vowcon):
+def addStitt(pair):
     """ Add Stitt to our newly transformed word called 'vowcon'"""
 
-    return "Sti" + vowcon
+    return "Stitt" + pair
 
+    
+def data_structure(word, original_word, stitt_dict):
+    """ Put this into a data structure """
+    if word in stitt_dict:
+        stitt_dict[word].append(original_word)
+    else:
+        stitt_dict[word] = [original_word] # cast to a list
+
+        
 def main():
     """ Let's go through the words and return a list of nick names for
     Diane Stitt .... yes! """
 
-    nicknames = []
-    for word in words.words('en-basic'):
+    stitt_dict = {}
+    for word in words.words('en'):
+        # find a word that includes two t's 
         if findPair(word):
-            vowcon = removeVowCon(word)
-            if vowcon:
-                nicknames.append(addStitt(vowcon))
-    return nicknames
+            data_structure(addStitt(findPair(word)), # Add Stitt to the word
+                           word, # include original word for comparison
+                           stitt_dict) # use a dict to group nickname dups
+            
+    # return a dictionary where each key is a program generated nickname
+    # mapped to a list of all words that generate that nickname
+    return stitt_dict
