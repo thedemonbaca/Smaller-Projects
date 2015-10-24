@@ -1,23 +1,33 @@
 Smaller-Projects
 ================
 
-These are projects done in R, Python, or Latex over the course of a day or a week. 
+These are projects done in R, Python, or Latex over the course of a day or a
+week.
 
-A. "Craig Crawler" extracts the link for a listing on craigslist and puts it in a table.
+* "Craig Crawler" extracts the link for a listing on craigslist and puts it in a
+table.
 
-B. "Data visualization" using ggplot2 to create a heatmap of which candidates recieved the most money.
+* "Data visualization" using ggplot2 to create a heatmap of which candidates
+recieved the most money.
 
-C. "PAC Preference" uses sqldf to manipulate data for a paper presented at a conference and uses ggplot2 to draw out 
-    additional information we may have missed.
+* "PAC Preference" uses sqldf to manipulate data for a paper presented at a
+conference and uses ggplot2 to draw out  additional information we may have
+missed.
 
-D. "SEC Mining" finds the link of interest, clicks on it, then scrapes the 10Q SEC form for market research info. 
+* "SEC Mining" finds the link of interest, clicks on it, then scrapes the 10Q
+SEC form for market research info.
 
-E. "Some stats hw" is exactly what it sounds like.
+* "Some stats hw" is exactly what it sounds like.
 
-F. "Trying to pick out a laptop" has some data visualizations. 
+* "Trying to pick out a laptop" has some data visualizations. 
 
-G. "Stats Review for Job Interview" uses IPython Notebook
+* "Stats Review for Job Interview" uses IPython Notebook
 
-H. "Mass Nonprofit Network Volunteer Data Science, Project 4 Group" does some data work and crosstabs 
+* "Mass Nonprofit Network Volunteer Data Science, Project 4 Group" does some
+data work and crosstabs 
 
-I. "resume" is my resume in Latex
+* "resume" is my resume in Latex
+
+* [Business Cards by Location and Industry](http://tbonza.github.io/Smaller-Projects/business_cards/heatmap.html)
+
+
