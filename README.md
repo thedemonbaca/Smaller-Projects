@@ -21,3 +21,5 @@ G. "Stats Review for Job Interview" uses IPython Notebook
 H. "Mass Nonprofit Network Volunteer Data Science, Project 4 Group" does some data work and crosstabs 
 
 I. "resume" is my resume in Latex
+
+J. ["Business Cards by Location and Industry"](http://tbonza.github.io/Smaller-Projects/).
